@@ -1,0 +1,32 @@
+Isolation Forest — simulated factory sensors
+Rows: 2000
+Features: temperature, humidity, sound
+Trees: 100
+Contamination: 0.05
+
+Training does not use is_anomaly. That column is only an answer key.
+
+Simulator faults (is_anomaly=1): 86 (4.3%)
+Model flagged (predict=-1):     100 (5.0%)
+
+True positives:  86
+False positives: 14
+False negatives: 0
+True negatives:  1900
+
+Mean anomaly score (higher = more odd):
+  simulator-normal rows:  0.4235
+  simulator-fault rows:   0.7131
+
+              precision    recall  f1-score   support
+
+      normal      1.000     0.993     0.996      1914
+     anomaly      0.860     1.000     0.925        86
+
+    accuracy                          0.993      2000
+   macro avg      0.930     0.996     0.961      2000
+weighted avg      0.994     0.993     0.993      2000
+
+Sanity checks (fresh readings, not in the CSV):
+  typical hall: score=0.3714  flag=normal
+  overheating spike: score=0.7023  flag=anomaly
