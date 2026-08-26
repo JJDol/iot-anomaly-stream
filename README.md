@@ -78,4 +78,4 @@ curl -X POST http://127.0.0.1:5001/predict \
 
 Higher `anomaly_score` means more unusual. `is_anomaly` is true or false.
 
-The oral is submitted to IU as a PDF plus a 15-minute recording. This repo is the code the examiner can reproduce.
+The oral is submitted to IU as a PDF plus a 15-minute recording. This repo is the code the examiner can reproduce: https://github.com/JJDol/iot-anomaly-stream
